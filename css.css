@@ -1,0 +1,436 @@
+:root {
+    --primary-color: #000;
+    --secondary-color: #ff6b6b;
+    --accent-color: #4ecdc4;
+    --text-color: #333;
+    --light-bg: #f9f9f9;
+  }
+  
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    line-height: 1.6;
+  }
+  
+  section {
+    padding: 60px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  h2 {
+    margin-bottom: 30px;
+    font-size: 2.2rem;
+    position: relative;
+    display: inline-block;
+  }
+  
+  h2::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background: var(--secondary-color);
+    bottom: -10px;
+    left: 25%;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  h2:hover::after {
+    transform: scaleX(1);
+  }
+  
+  .rekomendasi, .testimoni, .call-to-action {
+    background-color: white;
+    margin: 30px auto;
+    max-width: 1000px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    padding: 40px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .rekomendasi:hover, .testimoni:hover, .call-to-action:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  }
+  
+  .button {
+    display: inline-block;
+    padding: 14px 28px;
+    margin-top: 25px;
+    background-color: rgb(88, 88, 88);
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 2px solid rgb(88, 88, 88);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .button:hover {
+    background-color: white;
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  }
+  
+  .products, .testimonials, .product-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  
+  .product, .testimonial, .product-card {
+    flex: 1;
+    min-width: 250px;
+    padding: 25px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    background: rgba(255,255,255,0.8);
+  }
+  
+  .product:hover, .testimonial:hover, .product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    background: white;
+  }
+  
+  .testimonial {
+    position: relative;
+    border: 1px solid #eee;
+  }
+  
+  .testimonial::before {
+    content: '"';
+    font-size: 4rem;
+    color: var(--accent-color);
+    opacity: 0.2;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+  }
+  
+  /* Product Card Styles */
+  .product-card {
+    border: 1px solid #eee;
+    padding: 15px;
+    text-align: left;
+    min-width: 200px;
+    max-width: 250px;
+  }
+  
+  .product-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+  }
+  
+  .product-link {
+    text-decoration: none !important; 
+    color: inherit !important;        
+    display: block;                    
+  }
+
+  .product-link:hover {
+    cursor: pointer;                  
+  }
+
+  .product-link:focus {
+    outline: none;                
+  }
+
+  .product-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+    height: 40px;
+    overflow: hidden;
+  }
+  
+  .product-price {
+    color: var(--secondary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin: 10px 0;
+  }
+  
+  .product-rating {
+    color: #ffc107;
+    margin-bottom: 10px;
+  }
+  
+  .product-sold {
+    font-size: 0.8rem;
+    color: #666;
+  }
+  
+  .product-badge {
+    background: var(--accent-color);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  
+  .search-container {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto 30px;
+  }
+  
+  .search-bar {
+    width: 100%;
+    padding: 12px 50px 12px 20px;
+    border-radius: 30px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid #ddd;
+  }
+  
+  .search-bar:focus {
+    outline: none;
+    border-color: var(--accent-color);
+  }
+  
+  .search-button {
+    position: absolute;
+    right: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    background: transparent;
+  }
+
+  .hero-banner {
+    position: relative;
+    width: 100%;
+    height: 750px;
+    overflow: hidden;
+    margin-bottom: 40px;
+  }
+
+  .banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(60%);
+  }
+
+  .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+  }
+
+  .hero-text h1 {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+
+  .hero-text p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+  
+  /* Mobile responsiveness */
+  /* Tablet Responsiveness (768px - 1024px) */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .hero-banner {
+      height: 500px;
+    }
+    
+    .hero-text h1 {
+      font-size: 2.2rem;
+    }
+    
+    .hero-text p {
+      font-size: 1.1rem;
+    }
+    
+    .product-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .product-card {
+      max-width: 100%;
+    }
+    
+    .testimonials {
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .products {
+      flex-wrap: wrap;
+    }
+    
+    .product {
+      min-width: 45%;
+      margin-bottom: 20px;
+    }
+
+    .search-container {
+      max-width: 500px;
+      padding: 0 10px;
+    }
+
+    .search-button {
+      right: 15px;
+    }
+  }
+
+  /* Mobile Responsiveness (up to 767px) */
+  @media (max-width: 767px) {
+    /* Hero Section */
+
+    .hero-banner {
+      height: 400px;
+    }
+    
+    .hero-text h1 {
+      font-size: 1.8rem;
+      padding: 0 15px;
+    }
+    
+    .hero-text p {
+      font-size: 1rem;
+      padding: 0 15px;
+    }
+    
+    .button {
+      padding: 12px 24px;
+      font-size: 0.9rem;
+    }
+    
+    /* General Sections */
+    section {
+      padding: 40px 15px;
+    }
+    
+    h2 {
+      font-size: 1.6rem;
+      margin-bottom: 20px;
+    }
+    
+    /* Product Grid */
+    .product-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    
+    .product-card {
+      max-width: 100%;
+      padding: 15px;
+    }
+    
+    /* Testimonials */
+    .testimonials {
+      flex-direction: column;
+      gap: 20px;
+    }
+    
+    .testimonial {
+      padding: 20px;
+    }
+    
+    /* Features */
+    .products {
+      flex-direction: column;
+    }
+    
+    .product {
+      margin-bottom: 20px;
+      min-width: 100%;
+    }
+    
+    /* Search Bar */
+    .search-container {
+      max-width: 100px;
+      margin-bottom: 20px;
+    }
+    
+    .search-bar {
+      padding: 10px 15px;
+    }
+    
+    .search-button {
+      right: -18px;
+      background: transparent;
+    }
+    
+    /* Call to Action */
+    .call-to-action {
+      padding: 30px 15px;
+    }
+    
+    /* Card hover effects disable on mobile */
+    .product-card:hover, 
+    .testimonial:hover, 
+    .call-to-action:hover {
+      transform: none;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+  }
+
+  /* Small Mobile Devices (up to 480px) */
+  @media (max-width: 480px) {
+
+    .search-container {
+      max-width: 240px;
+      padding: 0 10px;
+    }
+
+    .search-button {
+      right: -18px;
+    }
+    .hero-banner {
+      height: 350px;
+    }
+    
+    .hero-text h1 {
+      font-size: 1.5rem;
+    }
+    
+    .hero-text p {
+      font-size: 0.9rem;
+    }
+    
+    .product-title {
+      font-size: 0.9rem;
+      height: auto;
+    }
+    
+    .product-price {
+      font-size: 1rem;
+    }
+    
+    .rekomendasi, 
+    .testimoni, 
+    .call-to-action {
+      padding: 25px 15px;
+      margin: 20px auto;
+    }
+  }
