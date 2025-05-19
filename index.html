@@ -12,11 +12,7 @@
       --text-color: #333;
       --light-bg: #f9f9f9;
     }
-
-    * {
-      box-sizing: border-box;
-    }
-
+    
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
       margin: 0;
@@ -25,20 +21,20 @@
       color: var(--text-color);
       line-height: 1.6;
     }
-
+    
     section {
       padding: 60px 20px;
       text-align: center;
       transition: all 0.3s ease;
     }
-
+    
     h2 {
       margin-bottom: 30px;
       font-size: 2.2rem;
       position: relative;
       display: inline-block;
     }
-
+    
     h2::after {
       content: '';
       position: absolute;
@@ -50,26 +46,26 @@
       transform: scaleX(0);
       transition: transform 0.3s ease;
     }
-
+    
     h2:hover::after {
       transform: scaleX(1);
     }
-
+    
     .rekomendasi, .testimoni, .call-to-action, .promo-spesial {
       background-color: white;
       margin: 30px auto;
-      max-width: 1200px;
+      max-width: 1000px;
       border-radius: 12px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
       padding: 40px;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
+    
     .rekomendasi:hover, .testimoni:hover, .call-to-action:hover, .promo-spesial:hover {
       transform: translateY(-5px);
       box-shadow: 0 10px 25px rgba(0,0,0,0.15);
     }
-
+    
     .button {
       display: inline-block;
       padding: 14px 28px;
@@ -84,50 +80,50 @@
       position: relative;
       overflow: hidden;
     }
-
+    
     .button:hover {
       background-color: white;
       color: var(--primary-color);
       transform: translateY(-3px);
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
-
+    
     .promo-button {
       background-color: var(--secondary-color);
       border-color: var(--secondary-color);
     }
-
+    
     .promo-button:hover {
       color: var(--secondary-color);
     }
 
     .products, .testimonials, .product-grid {
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
       flex-wrap: wrap;
       gap: 30px;
     }
-
+    
     .product, .testimonial, .product-card {
-      flex: 1 1 250px;
-      max-width: 300px;
+      flex: 1;
+      min-width: 250px;
       padding: 25px;
       border-radius: 10px;
       transition: all 0.3s ease;
       background: rgba(255,255,255,0.8);
     }
-
+    
     .product:hover, .testimonial:hover, .product-card:hover {
       transform: scale(1.05);
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
       background: white;
     }
-
+    
     .testimonial {
       position: relative;
       border: 1px solid #eee;
     }
-
+    
     .testimonial::before {
       content: '"';
       font-size: 4rem;
@@ -137,13 +133,16 @@
       top: 10px;
       left: 15px;
     }
-
+    
+    /* Product Card Styles */
     .product-card {
       border: 1px solid #eee;
       padding: 15px;
       text-align: left;
+      min-width: 200px;
+      max-width: 250px;
     }
-
+    
     .product-image {
       width: 100%;
       height: 180px;
@@ -151,11 +150,19 @@
       border-radius: 8px;
       margin-bottom: 15px;
     }
-
+    
     .product-link {
-      text-decoration: none;
-      color: inherit;
-      display: block;
+      text-decoration: none !important; 
+      color: inherit !important;        
+      display: block;                    
+    }
+
+    .product-link:hover {
+      cursor: pointer;                  
+    }
+
+    .product-link:focus {
+      outline: none;                
     }
 
     .product-title {
@@ -164,24 +171,24 @@
       height: 40px;
       overflow: hidden;
     }
-
+    
     .product-price {
       color: var(--secondary-color);
       font-weight: bold;
       font-size: 1.2rem;
       margin: 10px 0;
     }
-
+    
     .product-rating {
       color: #ffc107;
       margin-bottom: 10px;
     }
-
+    
     .product-sold {
       font-size: 0.8rem;
       color: #666;
     }
-
+    
     .product-badge {
       background: var(--accent-color);
       color: white;
@@ -191,60 +198,69 @@
       display: inline-block;
       margin-bottom: 10px;
     }
-
+    
+    /* Search Bar Styles */
     .search-container {
       position: relative;
       max-width: 500px;
       margin: 0 auto 30px;
     }
-
+    
     .search-bar {
       width: 100%;
-      padding: 12px 20px;
+      padding: 12px 50px 12px 20px;
       border-radius: 30px;
       font-size: 1rem;
       transition: all 0.3s ease;
       border: 2px solid #ddd;
     }
-
+    
     .search-bar:focus {
       outline: none;
       border-color: var(--accent-color);
     }
-
+    
     .search-button {
       position: absolute;
-      right: 10px;
+      right: -60px;
       top: 50%;
       transform: translateY(-50%);
-      background: transparent;
       border: none;
-      font-size: 1.2rem;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
       cursor: pointer;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+      background: transparent;
     }
-
+    
+    /* Promo Section Styles */
     .promo-content {
       text-align: left;
       max-width: 800px;
       margin: 0 auto;
     }
-
+    
     .promo-highlight {
       color: var(--secondary-color);
       font-weight: bold;
     }
-
+    
     .promo-benefits {
       margin: 20px 0;
       padding-left: 20px;
     }
-
+    
     .promo-benefits li {
       margin-bottom: 10px;
       position: relative;
       padding-left: 30px;
     }
-
+    
     .promo-benefits li::before {
       content: "✓";
       color: var(--accent-color);
@@ -252,7 +268,7 @@
       position: absolute;
       left: 0;
     }
-
+    
     .promo-urgency {
       background-color: #fff8e1;
       padding: 15px;
@@ -260,6 +276,8 @@
       margin: 25px 0;
       border-left: 4px solid var(--secondary-color);
     }
+    
+    /* Animation classes */
 
     .hero-banner {
       position: relative;
@@ -283,7 +301,6 @@
       transform: translate(-50%, -50%);
       text-align: center;
       color: white;
-      padding: 0 20px;
     }
 
     .hero-text h1 {
@@ -295,75 +312,35 @@
       font-size: 1.2rem;
       margin-top: 10px;
     }
-
-    @media (max-width: 1024px) {
-      .hero-text h1 {
-        font-size: 2rem;
-      }
-
-      .hero-banner {
-        height: 550px;
-      }
-    }
-
+    
+    /* Mobile responsiveness */
     @media (max-width: 768px) {
       section {
         padding: 30px 15px;
       }
-
+      
+      .carousel, .rekomendasi, .testimoni, .call-to-action, .promo-spesial {
+        padding: 25px 15px;
+      }
+      
       h2 {
         font-size: 1.8rem;
       }
-
+      
       .products, .testimonials, .product-grid {
         flex-direction: column;
-        align-items: center;
         gap: 20px;
       }
-
+      
       .product-card {
-        max-width: 90%;
-      }
-
-      .hero-banner {
-        height: 400px;
-      }
-
-      .hero-text h1 {
-        font-size: 1.5rem;
-      }
-
-      .hero-text p {
-        font-size: 1rem;
-      }
-
-      .promo-content {
-        padding: 0 15px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .search-container {
-        padding: 0 10px;
-      }
-
-      .hero-text h1 {
-        font-size: 1.3rem;
-      }
-
-      .hero-text p {
-        font-size: 0.9rem;
-      }
-
-      .button {
-        padding: 10px 20px;
-        font-size: 0.9rem;
+        max-width: 100%;
       }
     }
   </style>
 </head>
 <body>
 
+  <!-- Section 1: Carousel-->
   <header class="hero-banner">
     <img src="logo2.jpg" alt="Fashion Banner" class="banner-image">
     <div class="hero-text">
@@ -373,7 +350,212 @@
     </div>
   </header>
 
-  <!-- SISIPKAN BAGIAN <section> Rekomendasi, Promo, Testimoni, Call-to-Action dari kode sebelumnya di sini. Untuk menghindari pengulangan yang sangat panjang, bagian tersebut tetap valid dan bisa langsung ditempel setelah ini. -->
+  <!-- Section 2: Rekomendasi Produk -->
+  <section class="rekomendasi" id="rekomendasi">
+    <h2 class="animate delay-1">Rekomendasi Hari Ini</h2>
+    
+    <div class="search-container animate delay-1">
+      <input type="text" class="search-bar" placeholder="Cari produk fashion..." id="searchInput">
+      <button class="search-button" aria-label="Cari produk">🔍</button>
+    </div>
+    
+    <div class="product-grid animate delay-2" id="productGrid">
+      <!-- Baris Pertama -->
+      <a href="https://s.shopee.co.id/3VXWBOH5OD" target="_blank" class="product-link">
+        <div class="product-card">
+          <div class="product-badge">Diskon 30%</div>
+          <img src="https://down-id.img.susercontent.com/file/id-11134207-7rasc-m5l5332t4zod67.webp" alt="Kaos Polos" class="product-image">
+          <div class="product-title">Parfum Aroma Floral</div>
+          <div class="product-price">Rp 15.000</div>
+          <div class="product-rating">★★★★★ (4.9)</div>
+          <div class="product-sold">Terjual 1.2rb+</div>
+        </div>
+      </a>
 
+      <a href="https://s.shopee.co.id/707OM8vXrx" target="_blank" class="product-link">
+        <div class="product-card">
+          <div class="product-badge">Diskon 30%</div>
+          <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbk8-m8vix6qch3x934.webp" alt="Kaos Polos" class="product-image">
+          <div class="product-title">Parfum Aroma Woody</div>
+          <div class="product-price">Rp 131.000</div>
+          <div class="product-rating">★★★★★ (4.9)</div>
+          <div class="product-sold">Terjual 1.2rb+</div>
+        </div>
+      </a>
+
+      <a href="https://s.shopee.co.id/LaUQ6Oogm" target="_blank" class="product-link">
+        <div class="product-card">
+          <div class="product-badge">Diskon 30%</div>
+          <img src="https://down-id.img.susercontent.com/file/id-11134207-7rbke-m7kope1nyso2d1.webp" alt="Kaos Polos" class="product-image">
+          <div class="product-title">Parfum Aroma Fruity</div>
+          <div class="product-price">Rp 24.000</div>
+          <div class="product-rating">★★★★★ (4.9)</div>
+          <div class="product-sold">Terjual 1.2rb+</div>
+        </div>
+      </a>
+
+      <a href="https://s.shopee.co.id/2LLmpUFSKq?share_channel_code=1" target="_blank" class="product-link">
+        <div class="product-card">
+          <div class="product-badge">Diskon 30%</div>
+          <img src="https://down-id.img.susercontent.com/file/id-11134207-7qul4-lj5a0xm40gz122@resize_w450_nl.webp" alt="Kaos Polos" class="product-image">
+          <div class="product-title">Exhale White Polo</div>
+          <div class="product-price">Rp 119.000</div>
+          <div class="product-rating">★★★★★ (4.9)</div>
+          <div class="product-sold">Terjual 1.2rb+</div>
+        </div>
+      </a>
+
+      <a href="https://s.shopee.co.id/1B9pR6psEX?share_channel_code=1" target="_blank" class="product-link">
+        <div class="product-card">
+          <div class="product-badge">Diskon 30%</div>
+          <img src="https://down-id.img.susercontent.com/file/id-11134207-7r98t-lmx58oapn0h084.webp" alt="Kaos Polos" class="product-image">
+          <div class="product-title">Fairgoods Chinos</div>
+          <div class="product-price">Rp 80.000</div>
+          <div class="product-rating">★★★★★ (4.9)</div>
+          <div class="product-sold">Terjual 1.2rb+</div>
+        </div>
+      </a>
+
+      <a href="https://s.shopee.co.id/2qI3QLoIUq?share_channel_code=1" target="_blank" class="product-link">
+        <div class="product-card">
+          <div class="product-badge">Diskon 30%</div>
+          <img src="https://down-id.img.susercontent.com/file/id-11134207-7quky-li4s0ym2vn6p61.webp" alt="Kaos Polos" class="product-image">
+          <div class="product-title">Minusone Sepatu</div>
+          <div class="product-price">Rp 231.000</div>
+          <div class="product-rating">★★★★★ (4.9)</div>
+          <div class="product-sold">Terjual 1.2rb+</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- New Section: Promo Spesial -->
+  <section class="promo-spesial" id="promo">
+    <h2>🎉 Promo Spesial Hari Ini!</h2>
+    <div class="promo-content">
+      <p>Halo Pelanggan Setia Ilmu Sigma,</p>
+      
+      <p>Kami punya <span class="promo-highlight">kesempatan langka</span> khusus untuk Anda yang beruntung! Hanya hari ini, kami berikan penawaran eksklusif yang tidak akan Anda temukan di tempat lain.</p>
+      
+      <h3>✨ Keuntungan Khusus untuk Anda:</h3>
+      <ul class="promo-benefits">
+        <li><strong>Diskon hingga 50%</strong> untuk produk pilihan terbaik kami</li>
+        <li><strong>Bonus eksklusif</strong> berupa aksesoris gratis senilai Rp 50.000</li>
+        <li><strong>Garansi kepuasan</strong> 30 hari - tidak puas? Kami ganti!</li>
+        <li><strong>Prioritas pengiriman</strong> - pesanan dikirim hari ini juga!</li>
+      </ul>
+      
+      <div class="promo-urgency">
+        <p>🚨 <strong>Perhatian!</strong> Penawaran ini:</p>
+        <ul>
+          <li>Hanya berlaku <strong>hari ini</strong> (19 Mei 2025)</li>
+          <li>Terbatas untuk <strong>100 pembeli pertama</strong> saja</li>
+          <li>Tidak bisa digabung dengan promo lainnya</li>
+        </ul>
+      </div>
+      
+      <p>Jangan sampai kehabisan! Klik tombol di bawah ini sekarang untuk mengklaim penawaran spesial Anda sebelum promo berakhir.</p>
+      
+      <a href="#rekomendasi" class="button promo-button">DAPATKAN PROMO SEKARANG</a>
+      
+      <p style="margin-top: 20px; font-size: 0.9em;">Sampai jumpa di halaman pembelian,<br>
+      <strong>Tim Ilmu Sigma</strong></p>
+    </div>
+  </section>
+
+  <!-- Section 3: Testimoni Pelanggan -->
+  <section class="testimoni">
+    <h2 class="animate delay-1">Kata Mereka</h2>
+    <div class="testimonials">
+      <div class="testimonial animate delay-1">
+        <p><strong>Rihan</strong></p>
+        <p>⭐⭐⭐⭐⭐</p>
+        <p>"Cuma disini paling lengkap mulai dari ukuran anak sampai dewasa ada."</p>
+      </div>
+      <div class="testimonial animate delay-2">
+        <p><strong>Nandana</strong></p>
+        <p>⭐⭐⭐⭐⭐</p>
+        <p>"Produknya oke banget sesuai dengan foto dan deskripsi!"</p>
+      </div>
+      <div class="testimonial animate delay-3">
+        <p><strong>Putri</strong></p>
+        <p>⭐⭐⭐⭐⭐</p>
+        <p>"Suka banget! Untuk ukuran nya keren dan juga bahannya bersih banget."</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: Call to Action -->
+  <section class="call-to-action">
+    <h2 class="animate delay-1">Temukan Lebih Banyak Produk Keren untuk Lengkapi Gayamu!</h2>
+    <div class="products">
+      <div class="product animate delay-1">
+        <div class="feature-icon">✅</div>
+        <h3>Pilihan Terlengkap</h3>
+        <p>Ribuan produk fashion terkini dari berbagai brand ternama</p>
+      </div>
+      <div class="product animate delay-2">
+        <div class="feature-icon">🛡</div>
+        <h3>Kualitas Terjamin</h3>
+        <p>Produk 100% original dengan garansi kepuasan</p>
+      </div>
+      <div class="product animate delay-3">
+        <div class="feature-icon">💰</div>
+        <h3>Harga Bersahabat</h3>
+        <p>Diskon hingga 70% setiap hari dengan harga terbaik</p>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Animation trigger on scroll
+      const animateElements = document.querySelectorAll('.animate');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      animateElements.forEach(el => {
+        el.style.opacity = 0;
+        observer.observe(el);
+      });
+      
+      // Search functionality
+      const searchInput = document.getElementById('searchInput');
+      const searchButton = document.querySelector('.search-button');
+      const productCards = document.querySelectorAll('.product-card');
+      
+      function filterProducts() {
+        const searchTerm = searchInput.value.toLowerCase();
+        
+        productCards.forEach(card => {
+          const title = card.querySelector('.product-title').textContent.toLowerCase();
+          if (title.includes(searchTerm)) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }
+      
+      searchInput.addEventListener('input', filterProducts);
+      searchButton.addEventListener('click', filterProducts);
+      
+      // Button click effects
+      const buttons = document.querySelectorAll('.button');
+      buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          if (this.getAttribute('href') === '#') {
+            e.preventDefault();
+          }
+        });
+      });
+    });
+  </script>
 </body>
 </html>
