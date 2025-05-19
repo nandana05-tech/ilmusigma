@@ -5,6 +5,10 @@
     --text-color: #333;
     --light-bg: #f9f9f9;
   }
+
+html {
+  scroll-behavior: smooth;
+}
   
   body {
     font-family: 'Segoe UI', Arial, sans-serif;
